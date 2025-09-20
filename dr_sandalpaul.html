@@ -1,0 +1,138 @@
+# Repository: dr.sandalpaul.tk
+
+This repository template contains a minimal static website you can host on GitHub Pages and point your custom domain `dr.sandalpaul.tk` to it.
+
+---
+
+## Files included (you can copy these into the repo root)
+
+### `README.md`
+```markdown
+# dr.sandalpaul.tk
+
+Personal website for Dr. Sandal Paul — static site hosted on GitHub Pages.
+
+## Deploy
+1. Create a repository on GitHub named `dr.sandalpaul.tk` (this exact name makes Pages serve it at `https://dr.sandalpaul.tk`).
+2. Push the files from this template to the repository's default branch (`main` or `master`).
+3. In repo Settings → Pages, select the branch and folder (root) and save.
+4. Add a file named `CNAME` with content `dr.sandalpaul.tk` (already included here).
+5. Configure your domain's DNS:
+   - Add an A record pointing to GitHub Pages IPs (185.199.108.153, 185.199.109.153, 185.199.110.153, 185.199.111.153) OR use ALIAS/ANAME if your DNS provider supports it.
+   - If provider requires, add an `www` CNAME to `dr.sandalpaul.tk` or a CNAME for `www` to `USERNAME.github.io`.
+6. Wait for DNS to propagate and enable HTTPS in Pages settings.
+
+## Customize
+Edit `index.html` and `styles.css` to add your bio, CV, contact form link, clinic info, and images.
+
+```
+
+---
+
+### `CNAME`
+```
+dr.sandalpaul.tk
+```
+
+---
+
+### `index.html`
+```html
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Dr. Sandal Paul — Official site</title>
+  <meta name="description" content="Dr. Sandal Paul — consultant, resort doctor. Contact & professional info." />
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <h1>Dr. Sandal Paul</h1>
+    <p class="tag">Resort Doctor • Clinical Educator • <small>License: PL 04694</small></p>
+  </header>
+
+  <main class="container">
+    <section id="about">
+      <h2>About</h2>
+      <p>Welcome — I'm Dr. Sandal Paul. (Edit this paragraph with a short bio, specialties, and contact details.)</p>
+    </section>
+
+    <section id="services">
+      <h2>Services</h2>
+      <ul>
+        <li>Resort medicine / primary care</li>
+        <li>Emergency stabilization and transfer</li>
+        <li>Dental and surgical referrals</li>
+      </ul>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>Email: <a href="mailto:your.email@example.com">your.email@example.com</a></p>
+      <p>Phone / Clinic: Add phone number or booking link here.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; <span id="year"></span> Dr. Sandal Paul</p>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
+```
+
+---
+
+### `styles.css`
+```css
+:root{--max-width:900px;--accent:#1f6feb}
+*{box-sizing:border-box}
+body{font-family:system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial;margin:0;color:#222}
+.container{max-width:var(--max-width);margin:1.5rem auto;padding:0 1rem}
+.site-header{background:#f7f9ff;padding:2rem 1rem;text-align:center}
+.site-header h1{margin:0;font-size:2rem}
+.tag{color:#555;margin-top:.25rem}
+h2{margin-top:0}
+.site-footer{text-align:center;padding:1rem;color:#777}
+```
+
+---
+
+### `.gitignore`
+```
+.DS_Store
+node_modules/
+```
+
+---
+
+## Quick Git commands (run locally in the folder with the files)
+```bash
+# create repo locally
+git init
+git add .
+git commit -m "Initial website"
+# create remote on GitHub named dr.sandalpaul.tk then push (replace URL with your repo URL)
+git remote add origin git@github.com:YOUR_USERNAME/dr.sandalpaul.tk.git
+git branch -M main
+git push -u origin main
+```
+
+---
+
+## Optional: GitHub Actions to build (if you use a static site generator)
+If you later convert this to Jekyll, Hugo, Gatsby, or a Node-based builder, add a `workflow` under `.github/workflows/` to auto-build and publish.
+
+---
+
+## Need me to:
+- Generate additional pages (About, CV, Blog template, Contact form integration)
+- Convert this to a responsive multi-section one-page site with images and sections
+- Create a deploy-ready workflow for custom CMS (Netlify, Vercel) instead of Pages
+
+Tell me which you want and I'll add the files.
